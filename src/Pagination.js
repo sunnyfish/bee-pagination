@@ -162,6 +162,7 @@ class Pagination extends React.Component {
     }
     //如果maxButtons和eclipsis且hasHiddenPagesAfter 需加上after More Button
     if (maxButtons && hasHiddenPagesAfter && ellipsis) {
+      if( boundaryLinks && ( items > 1 + endPage ) ){
       pageButtons.push(
         <PaginationButton
           key="ellipsis"
@@ -173,6 +174,7 @@ class Pagination extends React.Component {
           </span>
         </PaginationButton>
       );
+    }
        //如果最后一个页数按钮不等于总页数 且 边界为true 需加上最大边界按钮
       if (boundaryLinks && endPage !== items) {
         pageButtons.push(
